@@ -10,4 +10,5 @@ require (
 	github.com/traefik/yaegi v0.15.1
 )
 
-// replace github.com/cherry-game/cherry-hotfix => github.com/zc-deng/cherry-hotfix v0.0.0-20240904105944-98130738a0b1
+replace github.com/cherry-game/cherry-hotfix => github.com/zc-deng/cherry-hotfix v0.0.0-20240904025944-98130738a0b1
+replace github.com/zc-deng/cherry-hotfix => github.com/zc-deng/hotfix v0.0.0-20240904025944-98130738a0b1
