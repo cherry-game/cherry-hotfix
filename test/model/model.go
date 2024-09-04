@@ -17,6 +17,10 @@ func (p *Foo) ExecFibonacciSum(n int) int {
 	return FibonacciSum(n)
 }
 
+func (p *Foo) HotFibonacciSum(n int) int {
+	return FibonacciSum(n)
+}
+
 func FibonacciSum(n int) int {
 	if n == 0 || n == 1 {
 		return n
