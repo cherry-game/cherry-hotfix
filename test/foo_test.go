@@ -71,7 +71,7 @@ func BenchmarkHotfix(b *testing.B) {
 
 		b.StartTimer()
 		for i := 0; i < b.N; i++ {
-			// foo.ExecFibonacciSum(10000)
+			foo.Hello()
 		}
 
 		b.StopTimer()
