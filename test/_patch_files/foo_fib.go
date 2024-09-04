@@ -18,7 +18,7 @@ func GetPatch() *hotfix.FuncPatch {
 
 	return &hotfix.FuncPatch{
 		StructType: reflect.TypeOf(&model.Foo{}),
-		// FuncName:   "ExecFibonacciSum",
-		FuncValue: reflect.ValueOf(fn),
+		FuncName:   "ExecFibonacciSum",
+		FuncValue:  reflect.ValueOf(fn),
 	}
 }
