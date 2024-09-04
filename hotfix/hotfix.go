@@ -2,15 +2,22 @@ package hotfix
 
 import (
 	"errors"
+	"reflect"
+
 	"github.com/agiledragon/gomonkey/v2"
 	"github.com/traefik/yaegi/interp"
-	"reflect"
 )
 
 var (
 	convertFuncPatchErr   = errors.New("convert FuncPatch error")
 	retrieveMethodNameErr = errors.New("retrieve method by name failed")
+	interpreter           *interp.Interpreter
 )
+
+func init() {
+	// 构建解析器
+	interpreter = interp.New(interp.Options{})
+}
 
 func ApplyFunc(filePath string, evalText string, symbols interp.Exports) (*gomonkey.Patches, error) {
 	fp, err := loadFuncPatch(filePath, evalText, symbols)
@@ -28,8 +35,6 @@ func ApplyFunc(filePath string, evalText string, symbols interp.Exports) (*gomon
 }
 
 func loadFuncPatch(filePath string, evalText string, symbols interp.Exports) (*FuncPatch, error) {
-	// 构建解析器
-	interpreter := interp.New(interp.Options{})
 	interpreter.Use(symbols)
 
 	_, err := interpreter.EvalPath(filePath)
