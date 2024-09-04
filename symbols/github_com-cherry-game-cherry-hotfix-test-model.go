@@ -9,6 +9,9 @@ import (
 
 func init() {
 	Symbols["github.com/cherry-game/cherry-hotfix/test/model/model"] = map[string]reflect.Value{
+		// function, constant and variable definitions
+		"FibonacciSum": reflect.ValueOf(model.FibonacciSum),
+
 		// type definitions
 		"Foo": reflect.ValueOf((*model.Foo)(nil)),
 	}

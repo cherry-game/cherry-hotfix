@@ -1,6 +1,7 @@
 package foo
 
 import (
+	"fmt"
 	"reflect"
 
 	"github.com/cherry-game/cherry-hotfix/hotfix"
@@ -12,8 +13,8 @@ func GetPatch() *hotfix.FuncPatch {
 
 	fn := func(foo *model.Foo, n int) int {
 		foo.M1Int.Int = 1
-		// fmt.Println("======")
-		return foo.ExecFibonacciSum(n)
+		fmt.Println("======FibonacciSum")
+		return foo.HotFibonacciSum(n)
 	}
 
 	return &hotfix.FuncPatch{
