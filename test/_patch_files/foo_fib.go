@@ -1,7 +1,6 @@
 package foo
 
 import (
-	"fmt"
 	"reflect"
 
 	"github.com/cherry-game/cherry-hotfix/hotfix"
@@ -13,13 +12,13 @@ func GetPatch() *hotfix.FuncPatch {
 
 	fn := func(foo *model.Foo, n int) int {
 		foo.M1Int.Int = 1
-		fmt.Println("======FibonacciSum")
+		// fmt.Println("======FibonacciSum")
 		return foo.HotFibonacciSum(n)
 	}
 
 	return &hotfix.FuncPatch{
 		StructType: reflect.TypeOf(&model.Foo{}),
-		FuncName:   "ExecFibonacciSum",
-		FuncValue:  reflect.ValueOf(fn),
+		// FuncName:   "ExecFibonacciSum",
+		FuncValue: reflect.ValueOf(fn),
 	}
 }
